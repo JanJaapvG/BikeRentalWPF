@@ -1,0 +1,45 @@
+﻿<Window x:Class="BikeRental.View.BikesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BikeRental.View"
+        xmlns:classes="clr-namespace:BikeRental.Classes"
+        xmlns:model="clr-namespace:BikeRental.Model"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="BikesWindow" Height="450" Width="800">
+    <Grid Background="#FF679DB8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="89*"/>
+            <ColumnDefinition Width="175*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Alle Fietsen" HorizontalAlignment="Left" Margin="137,83,0,0" VerticalAlignment="Top" Width="179" FontWeight="Bold" Grid.Column="2"/>
+        <ListBox ItemsSource="{Binding SelectedStore.Bikes}" SelectedItem="{Binding SelectedBike}" DisplayMemberPath="Name" HorizontalAlignment="Left" Height="259" Margin="137,114,0,0" VerticalAlignment="Top" Width="375" Grid.Column="2"/>
+        <TextBox x:Name="NameTextbox" Text="{Binding SelectedBike.Name}" HorizontalAlignment="Left" Margin="150,114,0,0" VerticalAlignment="Top" Height="24" Width="238" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="DescriptionTextbox" Text="{Binding SelectedBike.Description}" HorizontalAlignment="Left" Margin="150,151,0,0" VerticalAlignment="Top" Height="27" Width="238" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="BrandTextbox" Text="{Binding SelectedBike.Brand}" HorizontalAlignment="Left" Margin="150,192,0,0" VerticalAlignment="Top" Height="26" Width="238" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="HourRateTextbox" Text="{Binding SelectedBike.HourRate}" HorizontalAlignment="Left" Margin="150,342,0,0" VerticalAlignment="Top" Height="24" Width="87" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="HourRateTextbox_Copy" Text="{Binding SelectedBike.DailyRate}" HorizontalAlignment="Left" Margin="45,342,0,0" VerticalAlignment="Top" Height="24" Width="76" Grid.Column="2"/>
+        <ComboBox ItemsSource="{Binding Source={classes:EnumBindingSource model:Category}}" SelectedItem="{Binding SelectedBike.Type}" HorizontalAlignment="Left" Margin="150,232,0,0" VerticalAlignment="Top" Width="238" Grid.ColumnSpan="3"/>
+        <ComboBox ItemsSource="{Binding Source={classes:EnumBindingSource model:BikeSize}}" SelectedItem="{Binding SelectedBike.BikeSize}" HorizontalAlignment="Left" Margin="150,268,0,0" VerticalAlignment="Top" Width="238" Grid.ColumnSpan="3"/>
+        <ComboBox ItemsSource="{Binding Source={classes:EnumBindingSource model:Gender}}" SelectedItem="{Binding SelectedBike.Gender}" HorizontalAlignment="Left" Margin="150,302,0,0" VerticalAlignment="Top" Width="238" Grid.ColumnSpan="3"/>
+        <Label Content="Naam" HorizontalAlignment="Left" Margin="58,114,0,0" VerticalAlignment="Top" Width="92" FontWeight="Bold" Height="24" Grid.ColumnSpan="2"/>
+        <Label Content="Beschrijving" HorizontalAlignment="Left" Margin="58,151,0,0" VerticalAlignment="Top" Width="92" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Label Content="Merk" HorizontalAlignment="Left" Margin="58,187,0,0" VerticalAlignment="Top" Width="92" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Label Content="Type" HorizontalAlignment="Left" Margin="58,228,0,0" VerticalAlignment="Top" Width="92" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Label Content="Maat" HorizontalAlignment="Left" Margin="58,268,0,0" VerticalAlignment="Top" Width="92" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Button Content="Toevoegen" Command="{Binding AddBikeButton}" HorizontalAlignment="Left" Margin="150,73,0,0" VerticalAlignment="Top" Width="113" FontWeight="Bold" Height="36" Grid.ColumnSpan="2"/>
+        <Button Content="Verwijderen" Command="{Binding RemoveBikeButton}" HorizontalAlignment="Left" Margin="392,73,0,0" VerticalAlignment="Top" Width="120" FontWeight="Bold" Height="36" Grid.Column="2"/>
+        <Button Content="Opslaan" Command="{Binding SaveBikeButton}" HorizontalAlignment="Left" Margin="147,373,0,0" VerticalAlignment="Top" Width="120" FontWeight="Bold" Height="36" Click="Button_Click_1" Grid.ColumnSpan="2"/>
+        <Label Content="Geslacht" HorizontalAlignment="Left" Margin="58,302,0,0" VerticalAlignment="Top" Width="92" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Label Content="&#x9;&#x9;&#x9;Bike Rental App" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="792" Background="#FF247BA4" Foreground="White" FontSize="24" FontWeight="Bold" Grid.ColumnSpan="3"/>
+        <ComboBox ItemsSource="{Binding AllStores}" SelectedItem="{Binding SelectedStore}" DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Width="214" Height="30" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Label Content="Nieuwe Fiets" HorizontalAlignment="Left" Margin="58,83,0,0" VerticalAlignment="Top" Width="87" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Label Content="Gegevens wijzigen" HorizontalAlignment="Left" Margin="23,378,0,0" VerticalAlignment="Top" Width="119" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Label Content="Uur tarief" HorizontalAlignment="Left" Margin="58,342,0,0" VerticalAlignment="Top" Width="92" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Label Content="Dag tarief" HorizontalAlignment="Left" Margin="242,342,0,0" VerticalAlignment="Top" Width="92" FontWeight="Bold" Grid.ColumnSpan="3"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,25 @@
+﻿<Window x:Name="Save" x:Class="BikeRental.View.StoresWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BikeRental.View"
+        mc:Ignorable="d"
+        Title="StoresWindow" Height="450" Width="800">
+    <Grid Background="#FF679DB8">
+        <ListBox ItemsSource="{Binding Path=AllStores}" SelectedItem="{Binding SelectedStore}" DisplayMemberPath="Name" HorizontalAlignment="Left" Height="259" Margin="404,114,0,0" VerticalAlignment="Top" Width="375"/>
+        <TextBox x:Name="NameTextbox" Text="{Binding Path=SelectedStore.Name}" HorizontalAlignment="Left" Margin="150,114,0,0" VerticalAlignment="Top" Height="28" Width="238"/>
+        <TextBox x:Name="AdressTextbox" Text="{Binding Path=SelectedStore.Adress}" HorizontalAlignment="Left" Margin="150,160,0,0" VerticalAlignment="Top" Height="27" Width="238"/>
+        <TextBox x:Name="CityTextbox" Text="{Binding Path=SelectedStore.City}" HorizontalAlignment="Left" Margin="150,206,0,0" VerticalAlignment="Top" Height="31" Width="238"/>
+        <Label Content="Naam" HorizontalAlignment="Left" Margin="58,116,0,0" VerticalAlignment="Top" Width="92" FontWeight="Bold"/>
+        <Label Content="Adres" HorizontalAlignment="Left" Margin="58,161,0,0" VerticalAlignment="Top" Width="92" FontWeight="Bold"/>
+        <Label Content="Stad" HorizontalAlignment="Left" Margin="58,206,0,0" VerticalAlignment="Top" Width="92" FontWeight="Bold"/>
+        <Button Content="Toevoegen" Command="{Binding AddStoreButton}" HorizontalAlignment="Left" Margin="150,74,0,0" VerticalAlignment="Top" Width="109" Height="37" FontWeight="Bold"/>
+        <Button Content="Verwijderen" Command="{Binding RemoveStoreButton}" HorizontalAlignment="Left" Margin="655,72,0,0" VerticalAlignment="Top" Width="124" Height="37" FontWeight="Bold"/>
+        <Button Content="Opslaan" Command="{Binding SaveStoreButton}" HorizontalAlignment="Left" Margin="150,336,0,0" VerticalAlignment="Top" Width="114" Height="37" FontWeight="Bold"/>
+        <Label Content="Alle Winkels" HorizontalAlignment="Left" Margin="404,83,0,0" VerticalAlignment="Top" Width="375" FontWeight="Bold"/>
+        <Label Content="&#x9;&#x9;&#x9;Bike Rental App" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="792" Background="#FF247BA4" Foreground="White" FontSize="24" FontWeight="Bold"/>
+        <Label Content="Nieuwe Winkel" HorizontalAlignment="Left" Margin="53,83,0,0" VerticalAlignment="Top" Width="97" FontWeight="Bold"/>
+        <Label Content="Gegevens wijzigingen" HorizontalAlignment="Left" Margin="11,336,0,0" VerticalAlignment="Top" Width="134" FontWeight="Bold"/>
+    </Grid>
+</Window>
