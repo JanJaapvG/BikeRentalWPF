@@ -74,7 +74,6 @@ namespace BikeRental.Model
             }
         }
 
-        public Store Store { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

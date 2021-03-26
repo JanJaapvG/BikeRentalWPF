@@ -119,8 +119,6 @@ namespace BikeRental.Model
                 Notify("Size");
             }
         }
-        
-        public Store Store { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
