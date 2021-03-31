@@ -69,9 +69,9 @@
     </ApplicationDefinition>
     <Compile Include="Classes\EnumBindingSourceExtension.cs" />
     <Compile Include="Classes\RelayCommand.cs" />
-    <Compile Include="Migrations\202103221653089_InitialCreation.cs" />
-    <Compile Include="Migrations\202103221653089_InitialCreation.Designer.cs">
-      <DependentUpon>202103221653089_InitialCreation.cs</DependentUpon>
+    <Compile Include="Migrations\202103291633336_initial creation.cs" />
+    <Compile Include="Migrations\202103291633336_initial creation.designer.cs">
+      <DependentUpon>202103291633336_initial creation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\BikeRentalModel.cs" />
@@ -124,8 +124,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202103221653089_InitialCreation.resx">
-      <DependentUpon>202103221653089_InitialCreation.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202103291633336_initial creation.resx">
+      <DependentUpon>202103291633336_initial creation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

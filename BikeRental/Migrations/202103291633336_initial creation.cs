@@ -1,9 +1,9 @@
-namespace BikeRental.Migrations
+﻿namespace BikeRental.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreation : DbMigration
+    public partial class initialcreation : DbMigration
     {
         public override void Up()
         {
