@@ -31,11 +31,47 @@ namespace BikeRental.Migrations
             var bike2 = new Bike
             {
                 Name = "Herenfiets",
-                Description = "Goede stadsfiest",
+                Description = "Goede stadsfiets",
                 Brand = "Gazelle",
                 Type = Category.Stadsfiets,
                 BikeSize = BikeSize.Large,
                 Gender = Gender.Male,
+                HourRate = 5.50,
+                DailyRate = 12.75
+            };
+
+            var bike3 = new Bike
+            {
+                Name = "Damesfiets",
+                Description = "Goede stadsfiets",
+                Brand = "Gazelle",
+                Type = Category.Elektrischefiets,
+                BikeSize = BikeSize.Large,
+                Gender = Gender.Female,
+                HourRate = 5.50,
+                DailyRate = 12.75
+            };
+
+            var bike4 = new Bike
+            {
+                Name = "Cubernettes",
+                Description = "Voor waaghalzen",
+                Brand = "Cube",
+                Type = Category.Mountainbike,
+                BikeSize = BikeSize.Large,
+                Gender = Gender.Male,
+                HourRate = 5.50,
+                DailyRate = 12.75
+            };
+
+            var bike5 = new Bike
+            {
+                Name = "RubyOnRails",
+                Description = "Voor avonturiers",
+                Brand = "Cube",
+                Type = Category.Mountainbike,
+                BikeSize = BikeSize.Large,
+                Gender = Gender.Female,
                 HourRate = 5.50,
                 DailyRate = 12.75
             };
@@ -58,6 +94,15 @@ namespace BikeRental.Migrations
                 Email = "Celine@Duizend.nl",
             };
 
+            var customer3 = new Customer
+            {
+                Id = 3,
+                FirstName = "Jum",
+                LastName = "Beau",
+                Gender = Gender.Female,
+                Email = "Jum@Beau.nl",
+            };
+
             var store1 = new Store
             {
                 Id = 1,
@@ -70,11 +115,22 @@ namespace BikeRental.Migrations
 
             var store2 = new Store
             {
+                Id = 2,
                 Name = "Fietsenwinkel Amsterdam",
                 Adress = "Lelylaan 2",
                 City = "Amsterdam",
                 MaxCapacity = 1,
                 Bikes = new ObservableCollection<Bike>() { bike2 }
+            };
+
+            var store3 = new Store
+            {
+                Id = 3,
+                Name = "Profile Nijmegen",
+                Adress = "Groesbeekseweg 2",
+                City = "Nijmegen",
+                MaxCapacity = 1,
+                Bikes = new ObservableCollection<Bike>() { bike3, bike4, bike5 }
             };
 
             var reservation1 = new Reservation {
@@ -100,17 +156,20 @@ namespace BikeRental.Migrations
             store1.Customers.Add(customer1);
             store2.Reservations.Add(reservation2);
             store2.Customers.Add(customer2);
+            store3.Customers.Add(customer3);
 
             context.Stores.AddOrUpdate(
                 n => n.Name,
                 store1,
-                store2
+                store2,
+                store3
                 );
 
             context.Customers.AddOrUpdate(
                 p => p.Email,
                 customer1,
-                customer2
+                customer2,
+                customer3
                 );
         }
     }
