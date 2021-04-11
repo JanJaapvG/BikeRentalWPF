@@ -136,6 +136,7 @@ namespace BikeRental.Migrations
             var reservation1 = new Reservation {
                 Start = new DateTime(2021, 03, 30, 13, 45, 00),
                 End = new DateTime(2021, 04, 04, 13, 45, 00),
+                TotalPrice = 65.00,
                 Bike = bike1,
                 Customer = customer1,
                 DropoffStore = store1,
@@ -146,6 +147,7 @@ namespace BikeRental.Migrations
             {
                 Start = new DateTime(2021, 03, 30, 13, 45, 00),
                 End = new DateTime(2021, 04, 04, 13, 45, 00),
+                TotalPrice = 65.00,
                 Bike = bike2,
                 Customer = customer2,
                 DropoffStore = store2,

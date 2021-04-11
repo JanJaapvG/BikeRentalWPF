@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initialcreation : DbMigration
+    public partial class InitialCreation : DbMigration
     {
         public override void Up()
         {
@@ -48,6 +48,7 @@
                         Id = c.Int(nullable: false, identity: true),
                         Start = c.DateTime(nullable: false),
                         End = c.DateTime(nullable: false),
+                        TotalPrice = c.Double(nullable: false),
                         Bike_Id = c.Int(),
                         Customer_Id = c.Int(),
                         Store_Id = c.Int(),

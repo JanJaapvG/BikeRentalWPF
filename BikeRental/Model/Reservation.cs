@@ -12,6 +12,7 @@ namespace BikeRental.Model
         private Store _dropoffStore;
         private DateTime _start;
         private DateTime _end;
+        private double _totalPrice;
 
         public int Id
         {
@@ -76,6 +77,15 @@ namespace BikeRental.Model
             {
                 _end = value;
                 Notify("End");
+            }
+        }
+        public double TotalPrice
+        {
+            get => _totalPrice;
+            set
+            {
+                _totalPrice = value;
+                Notify("TotalPrice");
             }
         }
 
